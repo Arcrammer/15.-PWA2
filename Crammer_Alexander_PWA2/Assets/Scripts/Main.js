@@ -3,6 +3,6 @@
     Tuesday, 3 March, 2015
     Alexander Rhett Crammer  */
 
-(function($){
-    
-})(jQuery);
+$(document).ready(function () {
+    /* The DOM has loaded and we're ready to execute scripts */
+});
