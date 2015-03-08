@@ -135,10 +135,16 @@ p.tooltip
     padding: 5px 15px;}
 
 .welcome
-    {cursor: pointer;
+    {color: #5e5e5e;
+    cursor: pointer;
     position: absolute;
     top: 50px;
     left: 375px;}
+
+.noListElements
+    {color: #5e5e5e;
+    margin-top: 115px;
+    text-align: center;}
 
 /* Navigation Bar */
 .navigationBar

@@ -3,7 +3,7 @@
     Thursday, 5 March, 2015
     Alexander Rhett Crammer  */
 
-/* Document Overview: Send POST data to a given page for a given property then load that page. */
+/* Document Overview: Send POST data to a given page for a given property then load that page accounting for the POST data sent. */
 
 function sendPOSTData(processingDocument, properties) {
     var currentIndex = 0; /* This is a simple integer to be incremented by 1 throughout each loop in the following 'for ()' */

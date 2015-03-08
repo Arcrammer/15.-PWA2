@@ -1,12 +1,4 @@
 <!DOCTYPE html>  
-<!--
-    This is the main index of the application
-    
-    All your script tags should be at the bottom of this file
-    
-    The only html element in the body is the container div
-    Your code should load your page templates into the container
--->
 <html lang="en">
     <head>
         <title>11</title>
@@ -21,6 +13,9 @@
             <link rel="icon" type="image/png" href="Assets/Images/favicon.png">
             <link rel="stylesheet" href="Assets/Stylesheets/Main.css?v=1">
             <link rel="stylesheet" href="Assets/Stylesheets/Dashboard.css">
+        <!-- Scripts -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="Assets/Scripts/Main.js"></script>
     </head>
     <body>
         <img src="Assets/Images/Stripes.svg" draggable="false">
@@ -34,9 +29,9 @@
             </ul> <!-- .navigationBar -->
             <img src="Assets/Images/11.png">
             <div class="accountButtons">
-                <a href="#" class="button">Logout</a>
+                <a id="logoutButton" href="#" class="button">Logout</a>
             </div> <!-- .accountButtons -->
-            <p class="welcome">Welcome, User!</p>
+            <p class="welcome">Welcome!</p>
             <div class="contentArea">
                 <div class="segmentedControlView">
                     <div class="segmentedControlTabs">
@@ -45,66 +40,46 @@
                         <p>Users</p>
                     </div> <!-- .segmentedControlTabs -->
                     <div class="segmentedControlList">
-                        <ul id="projects">
-                            <li><p>Project 1</p><p>This is a simple project.</p></li>
-                            <li><p>Project 2</p><p>This is a simple project.</p></li>
-                            <li><p>Project 3</p><p>This is a simple project.</p></li>
-                            <li><p>Project 4</p><p>This is a simple project.</p></li>
-                            <li><p>Project 5</p><p>This is a simple project.</p></li>
-                            <li><p>Project 6</p><p>This is a simple project.</p></li>
-                            <li><p>Project 7</p><p>This is a simple project.</p></li>
-                            <li><p>Project 8</p><p>This is a simple project.</p></li>
+                        <ul class="projects">
+                            <script src="Assets/Scripts/FetchProjects.js"></script>
                         </ul>
-                        <ul id="tasks">
-                            <li><p>Task 1</p><p>This is a simple task.</p></li>
-                            <li><p>Task 2</p><p>This is a simple task.</p></li>
-                            <li><p>Task 3</p><p>This is a simple task.</p></li>
-                            <li><p>Task 4</p><p>This is a simple task.</p></li>
-                            <li><p>Task 5</p><p>This is a simple task.</p></li>
-                            <li><p>Task 6</p><p>This is a simple task.</p></li>
-                            <li><p>Task 7</p><p>This is a simple task.</p></li>
-                            <li><p>Task 8</p><p>This is a simple task.</p></li>
+                        <ul class="tasks">
+                            <script src="Assets/Scripts/FetchTasks.js"></script>
                         </ul>
-                        <ul id="users">
-                            <li><p>User 1</p><p>This is a simple user.</p></li>
-                            <li><p>User 2</p><p>This is a simple user.</p></li>
-                            <li><p>User 3</p><p>This is a simple user.</p></li>
-                            <li><p>User 4</p><p>This is a simple user.</p></li>
-                            <li><p>User 5</p><p>This is a simple user.</p></li>
-                            <li><p>User 6</p><p>This is a simple user.</p></li>
-                            <li><p>User 7</p><p>This is a simple user.</p></li>
-                            <li><p>User 8</p><p>This is a simple user.</p></li>
+                        <ul class="users">
+                            <script src="Assets/Scripts/FetchUsers.js"></script>
                         </ul>
                     </div> <!-- .segmentedControlList -->
                 </div> <!-- .segmentedControlView -->
             </div> <!-- .contentArea -->
         </div> <!-- .container -->
         <!-- Scripts -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <script src="Assets/Scripts/Main.js"></script>
             <script>
                 $(document).ready(function () {
+                    /* Remove the extra list items from the 'Projects' view upon load */
+                    $(".tasks, .users").css("display","none");
+                    $(".noListElements").css("display","none");
                     var segmentedControlTabs = ".segmentedControlTabs p"; /* The tabs */
                     var lists = ".segmentedControlList ul"; /* The lists */
                     
                     $(segmentedControlTabs).click(function () {
                         /* One of the tabs of the segmented control view were clicked */
                         $(segmentedControlTabs).removeClass("selectedSegmentedControlTab"); /* Remove the 'selectedSegmentedControlTab' class of the tabs */
-                        $(this).toggleClass("selectedSegmentedControlTab"); /* Add the class to the clicked tab if it isn't being applied already */
+                        $(this).addClass("selectedSegmentedControlTab"); /* Add the class to the clicked tab if it isn't being applied already */
                         $(lists).css("display","none"); /* Remove all of the lists */
                         switch ($(this).index()) {
                             /* Switch involving the index of the element clicked */
                             case 0:
                                 /* The tab with the id of 'projects' was clicked, so we'll show the appropriate list */
-                                $("#projects").css("display","block");
+                                $(".projects").css("display","block");
                             break;
                             case 1:
                                 /* The tab with the id of 'tasks' was clicked, so we'll show the appropriate list */
-                                $("#tasks").css("display","block");
+                                $(".tasks").css("display","block");
                             break;
                             case 2:
                                 /* The tab with the id of 'users' was clicked, so we'll show the appropriate list */
-                                $("#users").css("display","block");
+                                $(".users").css("display","block");
                             break;
                         }
                     });

@@ -77,11 +77,13 @@
 
 .segmentedControlList p:first-child
     {font-size: 1em;
-    text-indent: 25px;}
+    margin: 10px auto 0;
+    width: 85%;}
 
 .segmentedControlList p:not(:first-child)
     {font-size: 0.9em;
-    text-indent: 15px;}
+    margin: 15px auto 10px;
+    width: 90%;}
 
 #tasks, #users
     {display: none;}
