@@ -32,4 +32,29 @@ $(document).ready(function () {
             }
         }
     });
+    $(".users").sortable({
+        "axis":"y", /* Prevent list items from being drug horizontally */
+        "containment": $(".contentArea"), /* Prevent the user from dragging the list item down too far */
+        "start": function (event, ui) {
+            /* The user has begun to drag a list item */
+            $(ui.item[0]).css({
+                /* Add properties to the held list item */
+                "background-color":"rgba(175,175,175,0.8)",
+                "margin-left":"2.5%",
+                "padding":"0",
+                "width":"95%"
+            });
+        },
+        "stop": function (event, ui) {
+            /* The user has dropped the list item */
+            $(ui.item[0]).css({
+                /* Remove the properties set on pick-up */
+                "background-color":"transparent",
+                "font-size":"1em",
+                "margin-left":"0",
+                "padding":"15px 0",
+                "width":"100%"
+            });
+        }
+    });
 });

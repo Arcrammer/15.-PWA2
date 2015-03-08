@@ -6,8 +6,8 @@
 $(document).ready(function () {
     $("#loginButton").click(function (submission) {
         submission.preventDefault(); /* Prevent the form from submitting and reloadig the current page */
-        var usernameProvided = $("#username").val(); /* Store the provided username after converting it to lower case */
-        var keywordProvided = $("#keyword").val(); /* Store the provided password */
+        var usernameProvided = $('input[name="username_provided"').val(); /* Store the provided username after converting it to lower case */
+        var keywordProvided = $('input[name="password_provided"').val(); /* Store the provided password */
         $.ajax({ /* Sending an object to jQuery's .ajax() method */
             "url":"Assets/Scripts/xhr/login.php",
             "type":"POST",
@@ -33,14 +33,14 @@ $(document).ready(function () {
             window.location.replace("index.html");
         });
     });
-    $("#register").click(function (registration) {
+    $("#registerButton").click(function (registration) {
         registration.preventDefault();
         /* The 'Register' button was clicked */
-        var usernameProvided = $("#username").val(),
-        firstNameProvided = $("#first").val(),
-        lastNameProvided = $("#last").val(),
-        emailAddressProvided = $("#email_address").val(),
-        passwordProvided = $("#keyword").val();
+        var usernameProvided = $('input[name="desired_username"').val(),
+        firstNameProvided = $('input[name="first_name"').val(),
+        lastNameProvided = $('input[name="last_name"').val(),
+        emailAddressProvided = $('input[name="email_address"').val(),
+        passwordProvided = $('input[name="keyword"').val();
         $.ajax({
             "url":"Assets/Scripts/xhr/register.php",
             "type":"POST",

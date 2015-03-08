@@ -21,7 +21,7 @@ $(document).ready(function () {
                     var taskAtCurrentIndex = fetchTasksResponse.tasks[taskIndex];
                     var tastElement = '<li id="' + taskAtCurrentIndex["id"] + '">';
                     tastElement += "<p>" + taskAtCurrentIndex["taskName"] + "</p>";
-                    if (window.location.pathname == "Dashboard.html") {
+                    if (window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
                         /* The user is visiting the 'Dashboard' page */
                         tastElement += "<p>" + taskAtCurrentIndex["taskDescription"] + "</p></li>";
                     }
@@ -46,12 +46,37 @@ $(document).ready(function () {
                 }
                 if (fetchTasksResponse.tasks.length == 0) {
                     /* There are no tasks to display so we'll note the user of that */
-                    if (!window.location.pathname == "Dashboard.html") {
+                    if (!window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
                         var noTasksElement = '<p class="noListElements">You don\'t have any tasks at the moment.</p>';
                         $(".tasks").replaceWith(noTasksElement);
                     }
                 }
             }
+        }
+    });
+    $(".tasks").sortable({
+        "axis":"y", /* Prevent list items from being drug horizontally */
+        "containment": $(".contentArea"), /* Prevent the user from dragging the list item down too far */
+        "start": function (event, ui) {
+            /* The user has begun to drag a list item */
+            $(ui.item[0]).css({
+                /* Add properties to the held list item */
+                "background-color":"rgba(175,175,175,0.8)",
+                "margin-left":"2.5%",
+                "padding":"0",
+                "width":"95%"
+            });
+        },
+        "stop": function (event, ui) {
+            /* The user has dropped the list item */
+            $(ui.item[0]).css({
+                /* Remove the properties set on pick-up */
+                "background-color":"transparent",
+                "font-size":"1em",
+                "margin-left":"0",
+                "padding":"15px 0",
+                "width":"100%"
+            });
         }
     });
 });

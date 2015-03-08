@@ -1,33 +1,33 @@
 <!DOCTYPE html>  
 <html lang="en">
     <head>
-        <title>11</title>
+        <title>11 | Projects</title>
         <!-- Metadata -->
             <meta name="author" content="Alexander Rhett Crammer">
-            <meta name="description" content="">
+            <meta name="description" content="Manage your assignments, projects, essays, share them, and more with 11's social SCM-like approach.">
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Stylesheets -->
+        <!-- Links and Stylesheets -->
             <link rel="icon" type="image/png" href="Assets/Images/favicon.png">
-            <link rel="stylesheet" href="Assets/Stylesheets/Main.css?v=1">
+            <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
             <link rel="stylesheet" href="Assets/Stylesheets/Projects.css">
+            <link rel="stylesheet" href="Assets/jQueryUI/jquery-ui.min.css">
         <!-- Scripts -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="Assets/jQueryUI/jquery-ui.min.js"></script>
             <script src="Assets/Scripts/Main.js"></script>
     </head>
     <body>
-        <img alt="" src="Assets/Images/Stripes.svg" draggable="false">
+        <img alt="Background" src="Assets/Images/Stripes.svg" draggable="false">
         <div class="container">
-<p class="note">Now that the user has logged in there are links to the "Projects" and "Dashboard" pages in the navigation bar.</p>
             <ul class="navigationBar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Projects.html">Projects</a></li>
                 <li><a href="Dashboard.html">Dashboard</a></li>
                 <li><a href="#">Contact</a></li>
             </ul> <!-- .navigationBar -->
-            <img alt="" src="Assets/Images/11.png">
+            <img alt="11 Logo" src="Assets/Images/11.png">
             <div class="accountButtons">
                 <a id="logoutButton" href="#" class="button">Logout</a>
             </div> <!-- .accountButtons -->
@@ -35,18 +35,23 @@
                 <div class="creationModalContent">
                     <h1>Create a Project:</h1>
                     <form method="POST">
-                        <input type="text" name="name" id="name" class="tooltip" title='Your projects&rsquo; name' placeholder="Name"><br />
-                        <input type="text" name="brief" id="brief" class="tooltip" title='Provide a brief description for this project' placeholder="Description"><br />
-                        <input type="text" name="date" id="date" class="tooltip" title='Provide the date this project is to be completed by' placeholder="Completion Date"><br />
+                        <input placeholder="Name" type="text" name="name" id="name" class="tooltip" title="Your projects&rsquo; name"><br />
+                        <input placeholder="Description" type="text" name="brief" id="brief" class="tooltip" title="Brief description of this project"><br />
+                        <input placeholder="Completion" type="text" name="date" id="date" class="tooltip" title="Date this project is to be completed"><br />
+                        <input type="hidden" name="completion_date">
                         <div class="creationStatusRadioButtons">
                             <img alt="" src="Assets/Images/Icons/Warning%20exclamation%20sign%20in%20filled%20triangle%20free%20icon.png">
-                            <label for="urgent">Urgent: </label><input type="radio" id="urgent" name="status">
+                            <label for="urgent">Urgent: </label>
+                            <input type="radio" id="urgent" name="status">
                             <img alt="" src="Assets/Images/Icons/List%20with%20checkmarks%20free%20icon.png">
-                            <label for="successful">Normal: </label><input type="radio" id="successful" name="status"><br />
+                            <label for="successful">Normal: </label>
+                            <input type="radio" id="successful" name="status"><br />
                             <img alt="" src="Assets/Images/Icons/Clock%20time%20control%20tool.png">
-                            <label for="delayed">Delayed: </label><input type="radio" id="delayed" name="status">
+                            <label for="delayed">Delayed: </label>
+                            <input type="radio" id="delayed" name="status">
                             <img alt="" src="Assets/Images/Icons/Check%20mark.png">
-                            <label for="completed">Completed: </label><input type="radio" id="completed" name="status">
+                            <label for="completed">Completed: </label>
+                            <input type="radio" id="completed" name="status">
                         </div> <!-- .creationStatusRadioButtons -->
                     </form>
                     <button class="button cancelButton">Cancel</button>
@@ -63,18 +68,21 @@
         </div> <!-- .container -->
         <!-- Scripts -->
             <script src="Assets/Scripts/Tooltips.js"></script>
-            <script src="Assets/Scripts/TableLinksies.js"></script>
             <script>
                 $(document).ready(function () {
                     $("#plus").click(function () {
                         /* The '+' button was clicked */
                         $(".creationModalView").css("visibility","visible");
                     });
+                    $("#date").datepicker({
+                        "dateFormat":"yy-mm-dd" /* Format the date to fit MySQL's 'DATE' data types' format (YYYY-MM-DD) */
+                    });
                     $(".cancelButton").click(function () {
                         /* The creation modal view is displaying and the user wants to close it */
                         $(".creationModalView").css("visibility","hidden");
                     });
                     $(".createButton").click(function () {
+                        /* The user has created a new item so we'll refresh the page to show that it exists */
                         window.location.reload();
                     });
                     $(".creationStatusRadioButtons > img").click(function () {

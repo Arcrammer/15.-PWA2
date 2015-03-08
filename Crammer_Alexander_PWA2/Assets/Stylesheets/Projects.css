@@ -152,10 +152,10 @@ label
     height: 50px;}
 
 .projects li:hover
-    {background-color: rgba(175,175,175,0.2);}
+    {background-color: rgba(175,175,175,0.2) !important;} /* !important to prevent jQuery UI from breaking */
 
 .projects li:active
-    {background-color: rgba(175,175,175,0.5);}
+    {background-color: rgba(175,175,175,0.5) !important;} /* !important to prevent jQuery UI from breaking */
 
 .projects li p:nth-child(2)
     {font-weight: 200;

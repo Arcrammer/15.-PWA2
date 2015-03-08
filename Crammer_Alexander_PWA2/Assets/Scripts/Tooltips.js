@@ -19,8 +19,8 @@ $(".tooltip").hover(function () {
     /* The user is hovering over an element with the class 'tooltip' and the mouse has moved */
     var positionUpdate = {
             "position":"absolute",
-            "top": mouseMovement.pageY + 20, /* Vertical position of the mouse added with 20 */
-            "left": mouseMovement.pageX - 30, /* Horizontal position of the mouse subtracted by 30 */
+            "top": mouseMovement.pageY + 15, /* Vertical position of the mouse added with 20 */
+            "left": mouseMovement.pageX - 40, /* Horizontal position of the mouse subtracted by 30 */
             "z-index":"1"
         }; /* Defining the CSS properties to be applied to the 'p' element as the mouse moves */
     $("p.tooltip").css(positionUpdate); /* Applying the new position of the 'p' element */

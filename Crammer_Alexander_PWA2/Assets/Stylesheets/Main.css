@@ -3,27 +3,6 @@
     Tuesday, 3 March, 2015
     Alexander Rhett Crammer  */
 
-/* Note (This is temporary and it should be removed before production) */
-/* TODO: Remove all elements with the .note class from the documents and remove these .note classes */
-.note
-    {background-color: rgba(150,150,150,0.9);
-    color: #fff;
-    font-family: "Avenir Next";
-    font-size: 1.1em;
-    margin: 0;
-    padding: 10px;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;}
-
-.note a
-    {color: aqua;
-    font-style: italic;
-    text-decoration: none;}
-
 /* Master Reset */
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
@@ -48,7 +27,7 @@ img[src="Assets/Images/Stripes.svg"]
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    z-index: -1;} /* This property is important because it prevents a lot of transparency bugs. */
+    z-index: -90;} /* This property is important because it prevents a lot of z-index bugs. */
 
 img[src="Assets/Images/11.png"]
     {position: absolute;
@@ -89,10 +68,17 @@ a[href="/Register.html"]
     display: block;
     font-family: "Avenir Next";
     font-size: 1.2em;
-    font-style: italic;
     margin-top: 75px;
     text-align: center;
-    text-decoration: none;}
+    text-decoration: none;
+    transition: color 175ms;}
+
+a[href="/Register.html"]:hover
+    {color: #faa1bc;}
+
+a[href="/Register.html"]:active
+    {color: #d8597f;
+    font-style: italic;}
 
 .button
     {background-color: #F06890;
