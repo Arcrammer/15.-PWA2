@@ -17,11 +17,12 @@ $(document).ready(function () {
                 console.log(fetchTasksResponse.error);
             } else {
                 /* There wasn't an error */
+                var documentLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'));
                 for (var taskIndex=0;taskIndex < fetchTasksResponse.tasks.length;taskIndex++) {
                     var taskAtCurrentIndex = fetchTasksResponse.tasks[taskIndex];
                     var tastElement = '<li id="' + taskAtCurrentIndex["id"] + '">';
                     tastElement += "<p>" + taskAtCurrentIndex["taskName"] + "</p>";
-                    if (window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
+                    if (documentLocation == "/Dashboard.html") {
                         /* The user is visiting the 'Dashboard' page */
                         tastElement += "<p>" + taskAtCurrentIndex["taskDescription"] + "</p></li>";
                     }
@@ -46,7 +47,7 @@ $(document).ready(function () {
                 }
                 if (fetchTasksResponse.tasks.length == 0) {
                     /* There are no tasks to display so we'll note the user of that */
-                    if (!window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
+                    if (!documentLocation == "/Dashboard.html") {
                         var noTasksElement = '<p class="noListElements">You don\'t have any tasks at the moment.</p>';
                         $(".tasks").replaceWith(noTasksElement);
                     }
