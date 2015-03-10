@@ -19,11 +19,12 @@ $(document).ready(function () {
                 console.log(fetchProjectsResponse.error);
             } else {
                 /* There wasn't an error */
+                var documentLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'));
                 for (var projectIndex=0;projectIndex < fetchProjectsResponse.projects.length;projectIndex++) {
                     var projectAtCurrentIndex = fetchProjectsResponse.projects[projectIndex];
                     var projectElement = '<li id="' + projectAtCurrentIndex["id"] + '">';
                     projectElement += "<p>" + projectAtCurrentIndex["projectName"] + "</p>";
-                    if (window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
+                    if (documentLocation == "/Dashboard.html") {
                         /* The user is visiting the 'Dashboard' page */
                         projectElement += "<p>" + projectAtCurrentIndex["projectDescription"] + "</p></li>";
                     } else {
@@ -55,7 +56,7 @@ $(document).ready(function () {
                 }
                 if (fetchProjectsResponse.projects.length == 0) {
                     /* There are no projects to display so we'll note the user of that */
-                    if (!window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
+                    if (!documentLocation == "/Dashboard.html") {
                         /* We're not at the page above */
                         var noProjectsElement = '<p class="noListElements">You don\'t have any projects at the moment.</p>';
                         $(".projects").replaceWith(noProjectsElement); /* Replace the list with the paragraph above */
@@ -87,7 +88,7 @@ $(document).ready(function () {
                 "padding":"0",
                 "width":"100%"
             });
-            if (window.location.pathname == "/Crammer_Alexander_PWA2/Dashboard.html") {
+            if (documentLocation == "/Dashboard.html") {
                 $(ui.item[0]).css({
                     /* Also add top and bottom padding */
                     "padding":"15px 0",
