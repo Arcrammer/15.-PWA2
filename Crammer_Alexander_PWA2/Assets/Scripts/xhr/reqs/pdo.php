@@ -4,11 +4,11 @@ error_reporting(E_ALL);
 
 class PDB{
 
-	private $dbhost = 'Alexanders-MacBook-Pro.local';
-	private $dbport = '3306';
+	private $dbhost = 'localhost';
+	private $dbport = '8889';
 	private $dbname = 'pwa2_db';
-	private $dbuser = 'Alexander';
-	private $dbpass = 'kt8xZ35Kx8fkd8G';
+	private $dbuser = 'root';
+	private $dbpass = 'root';
 	
 	public $db = null;
 	
