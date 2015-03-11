@@ -1,0 +1,174 @@
+/*  Animation
+    Projects.css
+    Wednesday, 4 March, 2015
+    Alexander Rhett Crammer  */
+
+/* Content */
+.creationModalView
+    {background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    z-index: 1;} /* Move the layer over the other elements with positions 'absolute' */
+
+.creationModalContent
+    {background-color: #fafafa;
+    border: 3px solid #ddd;
+    border-radius: 30px;
+    margin: 135px auto 0;
+    padding: 25px;
+    height: 450px;
+    width: 500px;}
+
+.creationModalContent h1, .creationModalContent h2, .creationModalContent h3
+    {font-size: 2.5em;}
+
+/* Buttons */
+#plus:active
+    {margin-bottom: 5px;} /* Prevent elements under from coming up 5px due to the position change */
+
+.cancelButton
+    {background-color: #F79D80;
+    border-color: #dc8669;
+    position: relative;
+    top: 50px;
+    left: 135px;}
+
+.createButton
+    {background-color: #aece62;
+    border-color: #9cbb54;
+    position: relative;
+    top: 50px;
+    left: 175px;}
+
+.cancelButton:hover
+    {background-color: #ffad91;}
+
+.cancelButton:active
+    {background-color: #db8263;
+    position: relative;
+    top: 55px;
+    left: 135px;}
+
+.createButton:hover
+    {background-color: #bbde69;}
+
+.createButton:active
+    {background-color: #90b43b;
+    position: relative;
+    top: 55px;
+    left: 175px;}
+
+.smaller-button
+    {font-size: 0.8em;
+    padding: 10px 15px;}
+
+.delete-button
+    {background-color: #eb6767;
+    border-color: #d45353;}
+
+.delete-button:hover
+    {background-color: #f37575;
+    border-color: #dc5d5d;}
+
+.delete-button:active
+    {background-color: #a84040;}
+
+.edit-button
+    {margin-left: 15px;
+    margin-right: -15px;}
+
+/* Form */
+form
+    {margin: 25px auto;
+    text-align: center;}
+
+input
+    {margin: 10px;
+    width: 95%;}
+
+input
+    {font-family: "Avenir Next";
+    font-size: 1em;
+    padding: 10px 0;
+    text-indent: 15px;}
+
+input[type="text"]:focus
+    {font-style: italic;}
+
+input[type="radio"]
+    {margin-top: 20px;
+    width: 20%;}
+
+label
+    {font-family: "Avenir Next";
+    font-size: 1em;}
+
+.creationStatusRadioButtons
+    {font-size: 0.9em;
+    margin-top: 15px;
+    margin-bottom: -35px;
+    text-align: right;
+    width: 100%;}
+
+.creationStatusRadioButtons img
+    {margin: 0 5px 5px;
+    opacity: 0.9;
+    vertical-align: middle;
+    width: 35px;}
+
+.creationStatusRadioButtons img:hover
+    {opacity: 0.8;}
+
+.creationStatusRadioButtons img:active
+    {opacity: 1;}
+
+/* List view */
+.projects
+    {background: -moz-linear-gradient(top,  rgba(250,250,250,0.9) 0%, rgba(250,250,250,0.8) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(250,250,250,0.9)), color-stop(100%,rgba(250,250,250,0.8))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(250,250,250,0.9) 0%,rgba(250,250,250,0.8) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(250,250,250,0.9) 0%,rgba(250,250,250,0.8) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(250,250,250,0.9) 0%,rgba(250,250,250,0.8) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(250,250,250,0.9) 0%,rgba(250,250,250,0.8) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6fafafa', endColorstr='#ccfafafa',GradientType=0 ); /* IE6-9 */
+    margin-top: 50px;
+    overflow: auto;
+    position: relative;
+    top: 0;
+    right: 10%; /* Compensation for the extra 20% in the width on the next line */
+    width: 120%;}
+
+.projects p
+    {font-size: 1em;
+    line-height: 200%;}
+
+.projects li
+    {cursor: pointer;
+    overflow: auto;
+    height: 50px;}
+
+.projects li:hover
+    {background-color: rgba(175,175,175,0.2);}
+
+.projects li:active
+    {background-color: rgba(175,175,175,0.5);}
+
+.projects li p:nth-child(2)
+    {font-weight: 200;
+    font-size: 0.9em;}
+
+.projects p:nth-child(odd)
+    {cursor: pointer;
+    float: left;
+    margin-left: 25px;
+    width: 270px;}
+
+.projects p:nth-child(even)
+    {cursor: text;
+    float: right;
+    margin-right: 25px;
+    width: intrinsic;}

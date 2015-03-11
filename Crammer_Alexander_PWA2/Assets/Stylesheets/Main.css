@@ -9,6 +9,7 @@
     {background-color: rgba(150,150,150,0.9);
     color: #fff;
     font-family: "Avenir Next";
+    font-size: 1.1em;
     margin: 0;
     padding: 10px;
     position: fixed;
@@ -43,7 +44,7 @@ img[src="Assets/Images/Stripes.svg"]
     left: 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none; /* I want to prevent the user from being able to drag the image. */
+    -khtml-user-select: none; /* Prevent selection */
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -83,6 +84,68 @@ p
     margin-top: 10px;
     line-height: 125%;}
 
+a[href="/Register.html"]
+    {color: #F06890;
+    display: block;
+    font-family: "Avenir Next";
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 75px;
+    text-align: center;
+    text-decoration: none;}
+
+.button
+    {background-color: #F06890;
+    border: 0;
+    border-bottom: 5px solid #fa7da3;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Avenir Next";
+    font-size: 14px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none; /* Prevent selection */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    padding: 10px 26.5px;
+    text-decoration: none;
+    transition: background-color 250ms;}
+
+.button:hover
+    {background-color: #f2789d;}
+
+.button:active
+    {background-color: #d86084;
+    border-bottom: 0;
+    position: relative;
+    top: 5px;
+    left: auto;
+    right: auto;
+    transition: background-color 85ms;}
+
+p.tooltip
+    {background-color: rgba(250,250,250,0.8);
+    border: 1px solid rgba(150,150,150,0.8);
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 5px 15px;}
+
+.welcome
+    {color: #5e5e5e;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    left: 375px;}
+
+.noListElements
+    {color: #5e5e5e;
+    margin-top: 115px;
+    text-align: center;}
+
 /* Navigation Bar */
 .navigationBar
     {position: relative;
@@ -91,7 +154,7 @@ p
     width: 200px;}
 
 .navigationBar > li
-    {background-color: rgba(250,250,250,0.5);
+    {background-color: rgba(250,250,250,0.75);
     margin: 25px 0;
     overflow: hidden;
     padding: 25px 0;
@@ -112,39 +175,9 @@ p
 
 /* Account Buttons */
 .accountButtons
-    {cursor: pointer;
-    position: absolute;
+    {position: absolute;
     top: 50px;
-    right: 75px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;}
+    right: 75px;}
 
 .accountButtons > a
-    {background-color: #F06890;
-    border: 0;
-    border-bottom: 5px solid #fa7da3;
-    border-radius: 5px;
-    color: #fff;
-    font-family: "Avenir Next";
-    font-size: 14px;
-    margin-left: 30px;
-    outline: none;
-    padding: 10px 26.5px;
-    text-decoration: none;
-    transition: background-color 250ms;}
-
-.accountButtons > a:hover
-    {background-color: #f2789d;}
-    
-.accountButtons > a:active
-    {background-color: #d86084;
-    border-bottom: 0;
-    position: relative;
-    top: 5px;
-    left: auto;
-    right: auto;
-    transition: background-color 85ms;}
+    {margin-left: 30px;}
