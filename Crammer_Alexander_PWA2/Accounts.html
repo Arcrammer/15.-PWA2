@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html lang="en">
+    <head>
+        <title>11 | Accounts</title>
+        <!-- Metadata -->
+            <meta name="author" content="Alexander Rhett Crammer">
+            <meta name="description" content="Manage your assignments, projects, essays, share them, and more with 11's social SCM-like approach.">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Links and Stylesheets -->
+            <link rel="icon" type="image/png" href="Assets/Images/favicon.png">
+            <link rel="stylesheet" href="Assets/jQueryUI/jquery-ui.min.css">
+            <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
+            <link rel="stylesheet" href="Assets/Stylesheets/Accounts.css">
+        <!-- Scripts -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="Assets/jQueryUI/jquery-ui.min.js"></script>
+            <script src="Assets/Scripts/Main.js"></script>
+    </head>
+    <body>
+        <img alt="Background" src="Assets/Images/Stripes.svg" draggable="false">
+        <div class="container">
+            <ul class="navigationBar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Dashboard.html">Dashboard</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul> <!-- .navigationBar -->
+            <img alt="11 Logo" src="Assets/Images/11.png">
+            <div class="accountButtons">
+                <a id="logoutButton" href="#" class="button">Logout</a>
+            </div> <!-- .accountButtons -->
+            <div class="modalView">
+                <div class="creationModalContent">
+                    <h1>Edit your Information:</h1>
+                    <form method="POST">
+                        <input placeholder="First Name" type="text" name="firstName" id="firstName" class="tooltip" title="Your first name"><br />
+                        <input placeholder="Last Name" type="text" name="lastName" id="lastName" class="tooltip" title="Your last name"><br />
+                        <input placeholder="Email" type="text" name="email_address" id="emailAddress" class="tooltip" title="Your email address"><br />
+                        <input placeholder="City" type="text" name="city" id="city" class="tooltip" title="Your current city"><br />
+                        <input placeholder="State" type="text" name="state" id="state" class="tooltip" title="Your current state of United States"><br />
+                    </form>
+                    <button id="cancelButton" class="button cancelButton">Cancel</button>
+                    <button id="updateButton" class="button updateButton">Update</button>
+                </div> <!-- .creationModalContent -->
+            </div> <!-- .modalView -->
+            <p class="welcome">Welcome!</p>
+            <div class="contentArea">
+                <a id="editButton" class="button" href="#">Edit</a>
+            </div> <!-- .contentArea -->
+        </div> <!-- .container -->
+        <!-- Scripts -->
+            <script src="Assets/Scripts/Tooltips.js"></script>
+            <script src="Assets/Scripts/Accounts.js"></script>
+            <script>
+                $(".modalView").css("display","none");
+                $(".creationModalContent").css("display","none");
+            </script>
+    </body>
+</html>

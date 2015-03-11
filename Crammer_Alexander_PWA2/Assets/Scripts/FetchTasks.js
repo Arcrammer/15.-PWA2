@@ -6,7 +6,6 @@
 /* Document Overview: Fill a list with task data retrieved dynamically */
 
 $(document).ready(function () {
-    var documentLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'));
     $.ajax({
         "url":"Assets/Scripts/xhr/get_tasks.php",
         "type":"GET",
@@ -18,6 +17,7 @@ $(document).ready(function () {
                 console.log(fetchTasksResponse.error);
             } else {
                 /* There wasn't an error */
+                var documentLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'));
                 for (var taskIndex=0;taskIndex < fetchTasksResponse.tasks.length;taskIndex++) {
                     var taskAtCurrentIndex = fetchTasksResponse.tasks[taskIndex];
                     var tastElement = '<li id="' + taskAtCurrentIndex["id"] + '">';
@@ -53,6 +53,31 @@ $(document).ready(function () {
                     }
                 }
             }
+        }
+    });
+    $(".tasks").sortable({
+        "axis":"y", /* Prevent list items from being drug horizontally */
+        "containment": $(".contentArea"), /* Prevent the user from dragging the list item down too far */
+        "start": function (event, ui) {
+            /* The user has begun to drag a list item */
+            $(ui.item[0]).css({
+                /* Add properties to the held list item */
+                "background-color":"rgba(175,175,175,0.8)",
+                "margin-left":"2.5%",
+                "padding":"0",
+                "width":"95%"
+            });
+        },
+        "stop": function (event, ui) {
+            /* The user has dropped the list item */
+            $(ui.item[0]).css({
+                /* Remove the properties set on pick-up */
+                "background-color":"transparent",
+                "font-size":"1em",
+                "margin-left":"0",
+                "padding":"15px 0",
+                "width":"100%"
+            });
         }
     });
 });

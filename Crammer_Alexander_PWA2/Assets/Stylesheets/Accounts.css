@@ -1,0 +1,101 @@
+/*  Presentation
+    Accounts.css
+    Wednesday, 11 March, 2015
+    Alexander Rhett Crammer  */
+
+/* Modal View */
+.modalView
+    {background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;} /* Move the layer over the other elements with positions 'absolute' */
+
+.creationModalContent, .editModalContent
+    {background-color: #fafafa;
+    border: 3px solid #ddd;
+    border-radius: 30px;
+    margin: 135px auto 0;
+    padding: 25px;
+    height: 450px;
+    width: 500px;}
+
+.creationModalContent h1, .creationModalContent h2, .creationModalContent h3, .editModalContent h1, .editModalContent h2, .editModalContent h3
+    {font-size: 2.5em;}
+
+/* Content */
+.userDataName
+    {font-size: 0.9em;
+    font-style: italic;}
+
+/* Buttons */
+#editButton
+    {position: relative;
+    top: 0;
+    left: 435px;}
+
+#editButton:active
+    {position: relative;
+    top: 5px;
+    left: 435px;}
+
+.cancelButton
+    {background-color: #F79D80;
+    border-color: #dc8669;
+    position: relative;
+    top: -10px;
+    left: 135px;}
+
+.cancelButton:hover
+    {background-color: #ffad91;}
+
+.cancelButton:active
+    {background-color: #db8263;
+    position: relative;
+    top: -5px;
+    left: 135px;}
+
+.updateButton
+    {background-color: #dc63ca;
+    border-color: #bf4dae;
+    position: relative;
+    top: -10px;
+    left: 150px;}
+
+.updateButton:hover
+    {background-color: #e071d0;
+    border-color: #cf5ebe;}
+
+.updateButton:active
+    {background-color: #ad57a0;
+    position: relative;
+    top: -5px;
+    left: 150px;}
+
+/* Form */
+form
+    {margin: 25px auto;
+    text-align: center;}
+
+input
+    {margin: 10px;
+    width: 95%;}
+
+input
+    {font-family: "Avenir Next";
+    font-size: 1em;
+    padding: 10px 0;
+    text-indent: 15px;}
+
+input[type="text"]:focus
+    {font-style: italic;}
+
+input[type="radio"]
+    {margin-top: 20px;
+    width: 20%;}
+
+label
+    {font-family: "Avenir Next";
+    font-size: 1em;}

@@ -1,34 +1,34 @@
 <!DOCTYPE html>  
 <html lang="en">
     <head>
-        <title>11</title>
+        <title>11 | Dashboard</title>
         <!-- Metadata -->
             <meta name="author" content="Alexander Rhett Crammer">
-            <meta name="description" content="">
+            <meta name="description" content="Manage your assignments, projects, essays, share them, and more with 11's social SCM-like approach.">
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <!--  Mobile viewport optimized: j.mp/bplateviewport -->
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Stylesheets -->
+        <!-- Links and Stylesheets -->
             <link rel="icon" type="image/png" href="Assets/Images/favicon.png">
-            <link rel="stylesheet" href="Assets/Stylesheets/Main.css?v=1">
+            <link rel="stylesheet" href="Assets/Stylesheets/Main.css">
             <link rel="stylesheet" href="Assets/Stylesheets/Dashboard.css">
         <!-- Scripts -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="Assets/jQueryUI/jquery-ui.min.js"></script>
             <script src="Assets/Scripts/Main.js"></script>
     </head>
     <body>
-        <img src="Assets/Images/Stripes.svg" draggable="false">
+        <img alt="Background" src="Assets/Images/Stripes.svg" draggable="false">
         <div class="container">
-<p class="note">Now that the user has logged in there are links to the "Projects" and "Dashboard" pages in the navigation bar.</p>
             <ul class="navigationBar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Projects.html">Projects</a></li>
                 <li><a href="Dashboard.html">Dashboard</a></li>
                 <li><a href="#">Contact</a></li>
             </ul> <!-- .navigationBar -->
-            <img src="Assets/Images/11.png">
+            <img alt="11 Logo" src="Assets/Images/11.png">
             <div class="accountButtons">
+                <a id="accountButton" href="#" class="button">Account</a>
                 <a id="logoutButton" href="#" class="button">Logout</a>
             </div> <!-- .accountButtons -->
             <p class="welcome">Welcome!</p>
@@ -42,13 +42,13 @@
                     <div class="segmentedControlList">
                         <ul class="projects">
                             <script src="Assets/Scripts/FetchProjects.js"></script>
-                        </ul>
+                        </ul> <!-- .projects -->
                         <ul class="tasks">
                             <script src="Assets/Scripts/FetchTasks.js"></script>
-                        </ul>
+                        </ul> <!-- .tasks -->
                         <ul class="users">
                             <script src="Assets/Scripts/FetchUsers.js"></script>
-                        </ul>
+                        </ul> <!-- .users -->
                     </div> <!-- .segmentedControlList -->
                 </div> <!-- .segmentedControlView -->
             </div> <!-- .contentArea -->
@@ -56,16 +56,15 @@
         <!-- Scripts -->
             <script>
                 $(document).ready(function () {
-                    /* Remove the extra list items from the 'Projects' view upon load */
+                    /* Remove the extra list items and the `.noListElements` informative text from the 'Projects' view upon load */
                     $(".tasks, .users").css("display","none");
                     $(".noListElements").css("display","none");
                     var segmentedControlTabs = ".segmentedControlTabs p"; /* The tabs */
                     var lists = ".segmentedControlList ul"; /* The lists */
-                    
                     $(segmentedControlTabs).click(function () {
                         /* One of the tabs of the segmented control view were clicked */
-                        $(segmentedControlTabs).removeClass("selectedSegmentedControlTab"); /* Remove the 'selectedSegmentedControlTab' class of the tabs */
-                        $(this).addClass("selectedSegmentedControlTab"); /* Add the class to the clicked tab if it isn't being applied already */
+                        $(segmentedControlTabs).removeClass("selectedSegmentedControlTab"); /* Remove the classes of each tab */
+                        $(this).addClass("selectedSegmentedControlTab"); /* Add the `.selectedSegmentedControlTab` class to the clicked tab */
                         $(lists).css("display","none"); /* Remove all of the lists */
                         switch ($(this).index()) {
                             /* Switch involving the index of the element clicked */

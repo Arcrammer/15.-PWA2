@@ -5,13 +5,13 @@
 
 /* Segmented View */
 .segmentedControlView
-    {margin-top: 50px;
+    {cursor: pointer;
+    margin-top: 50px;
     text-align: center;}
 
     /* Segmented View Tabs */
 .segmentedControlTabs > p
     {background-color: rgba(235,235,235,0.75);
-    cursor: pointer;
     color: rgb(75,75,75);
     display: inline;
     font-size: 1em;
@@ -57,8 +57,7 @@
     width: 85%;}
 
 .segmentedControlList li
-    {cursor: pointer;
-    padding: 15px 0;
+    {padding: 15px 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none; /* Prevent selection */
@@ -67,10 +66,10 @@
     user-select: none;}
 
 .segmentedControlList li:hover
-    {background-color: rgba(175,175,175,0.2);}
+    {background-color: rgba(175,175,175,0.2) !important;} /* !important to prevent jQuery UI from breaking */
 
 .segmentedControlList li:active
-    {background-color: rgba(175,175,175,0.5);}
+    {background-color: rgba(175,175,175,0.5) !important;} /* !important to prevent jQuery UI from breaking */
 
 .segmentedControlList p
     {text-align: left;}
