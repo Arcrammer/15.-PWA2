@@ -3,6 +3,21 @@
     Tuesday, 3 March, 2015
     Alexander Rhett Crammer  */
 
+/* Content */
+#usersImage
+    {border: 1px solid #fff;
+    position: absolute;
+    top: 45px;
+    left: 335px;
+    width: 50px;}
+
+.statusIcon
+    {float: right;
+    position: relative;
+    top: -25px;
+    right: 5px;
+    width: 35px;}
+
 /* Segmented View */
 .segmentedControlView
     {cursor: pointer;

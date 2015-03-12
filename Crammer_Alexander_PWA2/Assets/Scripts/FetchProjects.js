@@ -6,6 +6,21 @@
 /* Document Overview: Fill a list with project data retrieved dynamically */
 
 $(document).ready(function () {
+    if (window.location.href.indexOf("?") != -1) {
+        // There was GET data sent with the request
+        var GETData = window.location.href.split("?")[1].split("&"); // Return the GET data to an array
+        var deletionNotificationShouldDisplay = GETData[0].split("=")[1]; // Find the first object of that array and retrieve its' value
+        if (deletionNotificationShouldDisplay == "true") {
+            /* We'll display a Growl-like notification to the user */
+            $(".notification").css("display","block");
+            var notification = '<p class="notificationText"><strong>Successfully Deleted</strong><br />';
+            notification += 'The project was successfully deleted.</p>';
+            $(".notificationText").replaceWith(notification);
+        }
+    } else {
+        // The request wasn't sent with GET data
+        $(".notification").css("display","none");
+    }
     /* The DOM has completely rendered so we'll send AJAX to the server in order to load the list */
     var documentLocation = window.location.pathname.substring(window.location.pathname.lastIndexOf('/'));
     $.ajax({
@@ -22,11 +37,26 @@ $(document).ready(function () {
                 /* There wasn't an error */
                 for (var projectIndex=0;projectIndex < fetchProjectsResponse.projects.length;projectIndex++) {
                     var projectAtCurrentIndex = fetchProjectsResponse.projects[projectIndex];
+                    switch (projectAtCurrentIndex.status) {
+                        case "completed":
+                            var statusIcon = "Assets/Images/Icons/Check%20mark.png";
+                            break;
+                        case "successful":
+                            var statusIcon = "Assets/Images/Icons/List%20with%20checkmarks%20free%20icon.png";
+                            break;
+                        case "urgent":
+                            var statusIcon = "Assets/Images/Icons/Warning%20exclamation%20sign%20in%20filled%20triangle%20free%20icon.png";
+                            break;
+                        case "delayed":
+                            var statusIcon = "Assets/Images/Icons/Clock%20time%20control%20tool.png";
+                            break;
+                    }
                     var projectElement = '<li id="' + projectAtCurrentIndex["id"] + '">';
                     projectElement += "<p>" + projectAtCurrentIndex["projectName"] + "</p>";
                     if (documentLocation == "/Dashboard.html") {
                         /* The user is visiting the 'Dashboard' page */
-                        projectElement += "<p>" + projectAtCurrentIndex["projectDescription"] + "</p></li>";
+                        projectElement += "<p>Completion: " + projectAtCurrentIndex["dueDate"];
+                        projectElement += '<img class="statusIcon" src="' + statusIcon + '" alt=""></p></li>';
                     } else {
                         /* The user is visiting another page, presumably the 'Projects' page */
                         projectElement += '<p><a class="button smaller-button delete-button">Delete</a>';
@@ -57,8 +87,7 @@ $(document).ready(function () {
                                 alert(deleteProjectResponse.error);
                             } else {
                                 /* The request has successfully completed and the new item has been deleted, so we'll refresh the page to show that */
-                                alert(projectAtCurrentIndex.projectName + " was successfully deleted.");
-                                window.location.reload();
+                                window.location.replace("Projects.html?notification=true");
                             }
                         }
                     });
@@ -166,5 +195,8 @@ $(document).ready(function () {
     });
     $("#accountButton").click(function () {
         window.location.replace("Accounts.html");
+    });
+    $(".dismissNotification").click(function () {
+        $(".notification").css("display","none");
     });
 });

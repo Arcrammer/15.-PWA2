@@ -21,6 +21,10 @@
     <body>
         <img alt="Background" src="Assets/Images/Stripes.svg" draggable="false">
         <div class="container">
+            <div class="notification">
+                <p class="notificationText"><strong>Oh no!</strong><br />No notifications for you.</p>
+                <a class="dismissNotification" href="#">Dismiss</a>
+            </div> <!-- .notification -->
             <ul class="navigationBar">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Projects.html">Projects</a></li>
@@ -32,6 +36,9 @@
                 <a id="accountButton" href="#" class="button">Account</a>
                 <a id="logoutButton" href="#" class="button">Logout</a>
             </div> <!-- .accountButtons -->
+            <p class="welcome">Welcome!</p>
+            <img id="usersImage" src="" alt="">
+            <script src="Assets/Scripts/FetchImage.js"></script>
             <div class="modalView">
                 <div class="creationModalContent">
                     <h1>Create a Project:</h1>

@@ -35,6 +35,11 @@ img[src="Assets/Images/11.png"]
     left: 115px;
     width: 125px;}
 
+#usersImage
+    {border: 3px solid white;
+    border-radius: 500px;
+    width: 175px;}
+
 .contentArea
     {position: absolute;
     top: 175px;
@@ -125,7 +130,7 @@ p.tooltip
     cursor: pointer;
     position: absolute;
     top: 50px;
-    left: 375px;}
+    left: 410px;}
 
 .noListElements
     {color: #5e5e5e;

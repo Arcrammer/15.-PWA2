@@ -3,6 +3,9 @@
     Wednesday, 11 March, 2015
     Alexander Rhett Crammer  */
 
+.contentArea
+    {font-size: 0.9em;}
+
 /* Modal View */
 .modalView
     {background-color: rgba(0,0,0,0.8);
@@ -26,8 +29,23 @@
     {font-size: 2.5em;}
 
 /* Content */
+#usersImage
+    {position: absolute;
+    top: 80px;
+    left: 325px;}
+
+#editOverlay
+    {border: 3px solid white;
+    border-radius: 500px;
+    position: absolute;
+    top: 80px;
+    left: 325px;
+    transition: background-color 100ms;
+    width: 175px;
+    z-index: 1;}
+
 .userDataName
-    {font-size: 0.9em;
+    {font-size: 0.8em;
     font-style: italic;}
 
 /* Buttons */

@@ -25,6 +25,13 @@
 .creationModalContent h1, .creationModalContent h2, .creationModalContent h3, .editModalContent h1, .editModalContent h2, .editModalContent h3
     {font-size: 2.5em;}
 
+#usersImage
+    {border: 1px solid #fff;
+    position: absolute;
+    top: 45px;
+    left: 335px;
+    width: 50px;}
+
 /* Buttons */
 #plus:active
     {margin-bottom: 5px;} /* Prevent elements under from coming up 5px due to the position change */
@@ -182,3 +189,48 @@ label
     float: right;
     margin-right: 25px;
     width: intrinsic;}
+
+/* Growl-like Notifications */
+.notification
+    {background-color: rgba(240,104,144,0.9);
+    border: 2px solid rgba(192,192,192,1);
+    border-radius: 10px;
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    width: 350px;
+    z-index: 1;}
+
+.notificationText
+    {color: #fff;
+    font-size: 0.8em;
+    text-indent: 5px;
+    padding: 5px 15px 0;}
+
+.notificationText strong
+    {font-size: 1.2em;
+    position: relative;
+    top: -2.5px;
+    left: 0;}
+
+.notification a:link
+    {color: #D1E4A4;
+    float: right;
+    font-family: "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", sans-serif;
+    position: relative;
+    bottom: 25px;
+    right: 25px;
+    text-decoration: none;}
+
+.notification a:visited
+    {color: #D1E4A4;
+    text-decoration: none;}
+
+.notification a:hover
+    {color: #d7e8b0;
+    font-style: italic;
+    text-decoration: none;}
+
+.notification a:active
+    {color: #c2d791;
+    text-decoration: none;}

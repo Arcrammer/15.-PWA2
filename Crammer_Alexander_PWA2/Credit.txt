@@ -5,3 +5,7 @@
 “Check mark” by TutsPlus from www.flaticon.com is licensed under CC BY 3.0 / Colour modified from #000 to a greenish tint.
 
 “Clock time control tool” by SimpleIcon from www.flaticon.com is licensed under CC BY 3.0 / Colour modified from #000 to something more alarming.
+
+“Cloud upload internet” by Yannick from www.flaticon.com is licensed under CC BY 3.0 / Colour modified from #000 to something light / Added over a black opaque background
+
+<div>Icon made by <a href="http://yanlu.de" title="Yannick">Yannick</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
